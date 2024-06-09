@@ -1,6 +1,7 @@
 // pages/api/nlp/tokenize.js
 
-import { tokenizer } from "wink-tokenizer";
+import natural from "natural";
+const tokenizer = new natural.WordTokenizer();
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -38,6 +39,8 @@ export default async function handler(req, res) {
       tokens: tokens,
     });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res
+      .status(500)
+      .json({ error: "Unable to tokenize the text.", message: error.message });
   }
 }
