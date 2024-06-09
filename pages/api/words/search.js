@@ -1,4 +1,4 @@
-// pages/api/words/random.js
+// pages/api/words/search.js
 
 import wordArray from "./wordList.json";
 
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   try {
     // Read the word list from the file
     const words = JSON.parse(JSON.stringify(wordArray));
-    const { startsWith, endsWith, contains, length } = req.query;
+    const { startsWith, endsWith, contains, length, limit } = req.query;
     const filteredWords = words
       .filter((word) => {
         let matchesStartsWith = startsWith ? word.startsWith(startsWith) : true;
@@ -33,19 +33,27 @@ export default async function handler(req, res) {
         );
       })
       .sort(() => 0.5 - Math.random());
-    const randomWord = filteredWords[0];
 
-    if (!randomWord) {
+    let wordList;
+
+    if (limit) {
+      wordList = filteredWords.slice(0, parseInt(limit));
+    } else {
+      wordList = filteredWords;
+    }
+
+    if (!wordList || wordList.length === 0) {
       return res.status(404).json({
         status: "error",
-        message: "Word not found",
+        message: "No words found",
       });
     }
 
     res.status(200).json({
       status: "success",
-      message: "Word fetched successfully",
-      word: randomWord,
+      message: "Words fetched successfully",
+      wordArrayLength: wordList.length,
+      words: wordList,
     });
   } catch (error) {
     res
