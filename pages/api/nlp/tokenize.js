@@ -1,9 +1,7 @@
 // pages/api/nlp/tokenize.js
 
-import winkNLP from "wink-nlp";
-import model from "wink-eng-lite-web-model";
-
-const nlp = winkNLP(model);
+import tokenizer from "wink-tokenizer";
+var tokenizer = tokenizer();
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -33,15 +31,14 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "No text provided for analysis." });
     }
 
-    const tokens = nlp.tokenize(text);
+    var tokens = tokenizer.tokenize(text);
+
     res.status(200).json({
       status: "success",
       message: "Tokens fetched successfully",
       tokens: tokens,
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "An error occurred", message: error.message });
+    res.status(500).json({ error: error.message });
   }
 }
