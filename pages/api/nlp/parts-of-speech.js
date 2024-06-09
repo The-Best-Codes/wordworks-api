@@ -1,6 +1,11 @@
 // pages/api/nlp/parts-of-speech.js
 
-import { nlp } from "../../../utils/nlp";
+/* import { nlp } from "../../../utils/nlp"; */
+import winkNLP from "wink-nlp";
+import model from "wink-eng-lite-web-model";
+
+// Initialize winkNLP with the English model
+const nlp = winkNLP(model);
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -30,11 +35,14 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "No word provided for analysis." });
     }
 
-    // Tokenize the word you want to analyze
-    const tokens = nlp.readDoc(word).tokens();
+    function getPossiblePOS(text) {
+      const doc = nlp.readDoc(text);
+      const tokens = doc.tokens().out();
+      const posTags = tokens.map((token) => token.pos);
+      return posTags;
+    }
 
-    // Get the part-of-speech tags for the token
-    const posTags = tokens.length > 0 ? tokens[0].out("pos") : [];
+    const posTags = getPossiblePOS(word);
 
     // Send the POS tags back in the response
     res.status(200).json({
