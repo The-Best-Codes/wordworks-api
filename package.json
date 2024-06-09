@@ -13,6 +13,7 @@
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "wink-eng-lite-web-model": "^1.8.0",
     "wink-nlp": "^2.3.0"
   },
   "devDependencies": {
