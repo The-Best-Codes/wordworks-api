@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     function getPossiblePOS(text) {
       const doc = nlp.readDoc(text);
       const tokens = doc.tokens().out();
-      const posTags = tokens.map((token) => token);
+      const posTags = tokens.map((token) => token.pos());
       return posTags;
     }
 
