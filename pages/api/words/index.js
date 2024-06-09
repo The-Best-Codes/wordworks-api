@@ -1,6 +1,6 @@
 // pages/api/words/index.js
 
-import { readFile } from "fs/promises";
+import wordArray from "./wordList.json";
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -14,12 +14,9 @@ export default async function handler(req, res) {
     return;
   }
 
-  const path = "./wordlist.json";
-
   try {
-    // Read the word list from the JSON file
-    const data = await readFile(path, "utf8");
-    const words = JSON.parse(data);
+    // Read the word list from the file
+    const words = JSON.parse(JSON.stringify(wordArray));
 
     // Send the array of words as a response
     res.status(200).json(words);
