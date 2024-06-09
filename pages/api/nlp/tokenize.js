@@ -1,7 +1,6 @@
 // pages/api/nlp/tokenize.js
 
-import tokenizer from "wink-tokenizer";
-var tokenizer = tokenizer();
+import { tokenizer } from "wink-tokenizer";
 
 export default async function handler(req, res) {
   // Set CORS headers
