@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     const sentiment = analyzer.getSentiment(text.split(/\s+/));
     res.status(200).json({
       status: "success",
-      sentiment: sentiment,
+      sentimentScore: sentiment,
     });
   } catch (error) {
     res.status(500).json({
