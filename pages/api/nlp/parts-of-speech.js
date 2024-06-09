@@ -1,11 +1,7 @@
 // pages/api/nlp/parts-of-speech.js
 
-/* import { nlp } from "../../../utils/nlp"; */
-import winkNLP from "wink-nlp";
-import model from "wink-eng-lite-web-model";
-
-// Initialize winkNLP with the English model
-const nlp = winkNLP(model);
+import posTagger from "wink-pos-tagger";
+var tagger = posTagger();
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -19,35 +15,28 @@ export default async function handler(req, res) {
     return;
   }
 
-  let word;
+  let text;
 
   try {
     if (req.method === "POST") {
-      ({ word } = req.body);
+      ({ text } = req.body);
     } else if (req.method === "GET") {
-      word = req.query.word;
+      text = req.query.text;
     } else {
       res.setHeader("Allow", ["POST", "GET"]);
       return res.status(405).end(`Method ${req.method} Not Allowed`);
     }
 
-    if (!word) {
-      return res.status(400).json({ error: "No word provided for analysis." });
+    if (!text) {
+      return res.status(400).json({ error: "No text provided for analysis." });
     }
 
-    function getPossiblePOS(text) {
-      const doc = nlp.readDoc(text);
-      const tokens = doc.tokens().out();
-      const posTags = tokens.map((token) => token.pos());
-      return posTags;
-    }
+    var taggedSentence = tagger.tagSentence(text);
 
-    const posTags = getPossiblePOS(word);
-
-    // Send the POS tags back in the response
     res.status(200).json({
-      word: word,
-      posTags: posTags,
+      status: "success",
+      message: "Parts of Speech fetched successfully",
+      partsOfSpeech: taggedSentence,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
