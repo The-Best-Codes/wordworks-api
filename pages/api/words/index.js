@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
   try {
     // Read the word list from the JSON file
-    const data = await readFile("../../../assets/wordList.json", "utf8");
+    const data = await readFile("./assets/words/wordList.json", "utf8");
     const words = JSON.parse(data);
 
     // Send the array of words as a response
