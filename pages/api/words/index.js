@@ -19,7 +19,12 @@ export default async function handler(req, res) {
     const words = JSON.parse(JSON.stringify(wordArray));
 
     // Send the array of words as a response
-    res.status(200).json(words);
+    res.status(200).json({
+      status: "success",
+      message: "Words fetched successfully",
+      wordArrayLength: words.length,
+      words: words,
+    });
   } catch (error) {
     // Handle any errors that occur during file reading
     res
