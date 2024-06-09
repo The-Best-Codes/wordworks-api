@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const path = req.query.path || "wordList.json";
+  const path = req.query.path || "../../../public/words/wordList.json";
 
   try {
     // Read the word list from the JSON file
