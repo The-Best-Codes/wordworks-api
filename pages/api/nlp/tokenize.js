@@ -3,15 +3,7 @@
 import natural from "natural";
 const tokenizer = new natural.WordTokenizer();
 
-/**
- * Handles the API request for fetching the tokens.
- *
- * @route GET /api/nlp/tokenize
- * @group nlp
- * @returns {Promise} 200 - Tokens (Success)
- * @returns {Error}  500 - Unable to read the tokens. (Error)
- * @returns {Error}  400 - No tokens found. (Error)
- */
+
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");

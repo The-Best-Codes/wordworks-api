@@ -2,15 +2,7 @@
 
 import wordArray from "./wordList.json";
 
-/**
- * Handles the API request for searching the word list.
- *
- * @route GET /api/words/search
- * @group words
- * @returns {Promise} 200 - Word list (Success)
- * @returns {Error}  500 - Unable to read the word list. (Error)
- * @returns {Error}  400 - No word list found. (Error)
- */
+
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");

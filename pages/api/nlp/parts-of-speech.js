@@ -3,15 +3,7 @@
 import posTagger from "wink-pos-tagger";
 var tagger = posTagger();
 
-/**
- * Handles the API request for fetching the parts of speech.
- *
- * @route GET /api/nlp/parts-of-speech
- * @group nlp
- * @returns {Promise} 200 - Parts of speech (Success)
- * @returns {Error}  500 - Unable to read the parts of speech. (Error)
- * @returns {Error}  400 - No parts of speech found. (Error)
- */
+
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");
