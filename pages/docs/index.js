@@ -1,26 +1,10 @@
-import { SwaggerUI } from "swagger-ui-react";
-import "swagger-ui-react/swagger-ui.css";
-import swaggerJsdoc from "swagger-jsdoc";
+// pages/docs/index.js
+export async function getStaticProps(context) {
+  const swaggerSpecification = swaggerJsdoc({
+    // Your configuration here
+  });
 
-// Define your Swagger/OpenAPI specification
-const swaggerSpecification = swaggerJsdoc({
-  definition: {
-    openapi: "3.0.0",
-    info: {
-      title: "My API",
-      version: "1.0.0",
-      description: "This is the API documentation for my Next.js app.",
-    },
-  },
-  apis: ["./pages/api/**/*.js"],
-});
-
-const ApiDocsPage = () => {
-  return (
-    <div>
-      <SwaggerUI spec={swaggerSpecification} />
-    </div>
-  );
-};
-
-export default ApiDocsPage;
+  return {
+    props: { swaggerSpecification }, // will be passed to the page component as props
+  };
+}
