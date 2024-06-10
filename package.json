@@ -9,10 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@huggingface/inference": "^2.7.0",
     "fs": "^0.0.1-security",
     "huggingface": "^1.4.0",
-    "jstransformer": "^1.0.0",
     "natural": "^7.0.6",
     "next": "14.2.3",
     "node-fetch": "^3.3.2",
