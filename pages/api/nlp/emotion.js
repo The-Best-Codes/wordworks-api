@@ -1,6 +1,6 @@
 // pages/api/nlp/emotion.js
 
-import { pipeline } from "jstransformer";
+import { pipeline } from "@huggingface/inference";
 
 export default async function handler(req, res) {
   try {
