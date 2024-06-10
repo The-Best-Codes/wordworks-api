@@ -1,6 +1,6 @@
 // pages/api/nlp/emotion.js
 
-import { pipeline } from "transformers";
+import { pipeline } from "jstransformer";
 
 export default async function handler(req, res) {
   try {
