@@ -2,6 +2,15 @@
 
 import fetch from "node-fetch";
 
+/**
+ * Handles the API request for fetching the sentiment.
+ *
+ * @route GET /api/nlp/emotion
+ * @group nlp
+ * @returns {Promise} 200 - Sentiment (Success)
+ * @returns {Error}  500 - Unable to analyze sentiment. (Error)
+ * @returns {Error}  400 - No text provided for analysis. (Error)
+ */
 export default async function handler(req, res) {
   try {
     const { text } = req.query;
