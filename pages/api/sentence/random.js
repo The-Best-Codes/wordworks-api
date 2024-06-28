@@ -9,7 +9,7 @@ async function fetchRandomWord(url, key, wordType) {
     const data = await response.json(); // Assuming the response is JSON formatted
     let words = data[key];
 
-    console.log(`Fetched ${words.length} ${wordType} words from ${url}`);
+    //console.log(`Fetched ${words.length} ${wordType} words from ${url}`);
 
     // Special handling for verbs due to their structure
     if (wordType === 'verb' || wordType === 'verbPresent') {
@@ -28,7 +28,7 @@ function getWordTypeUrl(wordType) {
         noun: 'https://github.com/dariusk/corpora/raw/master/data/words/nouns.json',
         verb: 'https://github.com/dariusk/corpora/raw/master/data/words/verbs.json',
         verbPresent: 'https://github.com/dariusk/corpora/raw/master/data/words/verbs.json',
-        adjective: 'https://github.com/dariusk/corpora/raw/master/data/words/adjs.json',
+        adj: 'https://github.com/dariusk/corpora/raw/master/data/words/adjs.json',
     };
     return { url: urls[wordType], key: wordType === 'verbPresent' ? 'present' : wordType + 's' };
 }
@@ -47,11 +47,11 @@ export default async function handler(req, res) {
 
     try {
         const queryParams = req.query;
-        const wordsParam = queryParams.words ? JSON.parse(queryParams.words) : ["verb", "adjective", "noun"];
+        const wordsParam = queryParams.words ? JSON.parse(queryParams.words) : ["verb", "adj", "noun"];
         const separator = queryParams.separator || '-';
 
-        console.log(wordsParam, separator);
-        console.log(JSON.stringify(wordsParam) + " <-- wordsParam");
+        //console.log(wordsParam, separator);
+        //console.log(JSON.stringify(wordsParam) + " <-- wordsParam");
 
         const wordsPromises = wordsParam.map(wordType => {
             const { url, key } = getWordTypeUrl(wordType);
