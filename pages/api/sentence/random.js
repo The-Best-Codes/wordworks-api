@@ -1,14 +1,23 @@
 import fetch from "node-fetch";
 
 // Helper function to fetch words from a URL and return a random word
-async function fetchRandomWord(url, key) {
+async function fetchRandomWord(url, key, wordType) {
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const data = await response.text();
-    const words = JSON.parse(data);
-    return words[key][Math.floor(Math.random() * words[key].length)];
+    const data = await response.json(); // Assuming the response is JSON formatted
+    let words = data[key];
+
+    // Special handling for verbs due to their structure
+    if (wordType === 'verb' || wordType === 'verbPresent') {
+        const randomVerbObject = words[Math.floor(Math.random() * words.length)];
+        // Assuming you want to randomly choose between 'past' and 'present'
+        const tense = ['past', 'present'][Math.floor(Math.random() * 2)];
+        return randomVerbObject[tense];
+    }
+
+    return words[Math.floor(Math.random() * words.length)];
 }
 
 // Function to get the word types and their corresponding URLs
@@ -41,7 +50,7 @@ export default async function handler(req, res) {
 
         const wordsPromises = wordsParam.map(wordType => {
             const { url, key } = getWordTypeUrl(wordType);
-            return fetchRandomWord(url, key);
+            return fetchRandomWord(url, key, wordType);
         });
 
         const words = await Promise.all(wordsPromises);
