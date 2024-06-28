@@ -40,7 +40,7 @@ export default async function handler(req, res) {
         const adjectiveWords = JSON.parse(adjectiveData);
         const randomAdjective = adjectiveWords.adjs[Math.floor(Math.random() * adjectiveWords.adjs.length)];
 
-        const sentence = `${randomNoun}-${randomVerb}-${randomAdjective}`;
+        const sentence = `${randomVerb}-${randomAdjective}-${randomNoun}`;
 
         res.status(200).json({ data: sentence });
     } catch (error) {
