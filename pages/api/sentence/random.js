@@ -29,8 +29,9 @@ function getWordTypeUrl(wordType) {
         verb: 'https://github.com/dariusk/corpora/raw/master/data/words/verbs.json',
         verbPresent: 'https://github.com/dariusk/corpora/raw/master/data/words/verbs.json',
         adj: 'https://github.com/dariusk/corpora/raw/master/data/words/adjs.json',
+        adverb: 'https://github.com/dariusk/corpora/raw/master/data/words/adverbs.json'
     };
-    return { url: urls[wordType], key: wordType === 'verbPresent' ? 'present' : wordType + 's' };
+    return { url: urls[wordType], key: wordType === 'verbPresent' ? 'verbs' : wordType + 's' };
 }
 
 export default async function handler(req, res) {
