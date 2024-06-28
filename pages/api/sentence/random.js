@@ -9,6 +9,8 @@ async function fetchRandomWord(url, key, wordType) {
     const data = await response.json(); // Assuming the response is JSON formatted
     let words = data[key];
 
+    console.log(`Fetched ${words.length} ${wordType} words from ${url}`);
+
     // Special handling for verbs due to their structure
     if (wordType === 'verb' || wordType === 'verbPresent') {
         const randomVerbObject = words[Math.floor(Math.random() * words.length)];
@@ -47,6 +49,9 @@ export default async function handler(req, res) {
         const queryParams = req.query;
         const wordsParam = queryParams.words ? JSON.parse(queryParams.words) : ["verb", "adjective", "noun"];
         const separator = queryParams.separator || '-';
+
+        console.log(wordsParam, separator);
+        console.log(JSON.stringify(wordsParam) + " <-- wordsParam");
 
         const wordsPromises = wordsParam.map(wordType => {
             const { url, key } = getWordTypeUrl(wordType);
