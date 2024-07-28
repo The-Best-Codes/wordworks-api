@@ -10,7 +10,7 @@ export default function Home() {
         href="https://documenter.getpostman.com/view/36348829/2sA3kSoNjY"
         className="text-2xl underline"
       >
-        Docs here: https://documenter.getpostman.com/view/36348829/2sA3kSoNjY
+        https://documenter.getpostman.com/view/36348829/2sA3kSoNjY
       </Link>
     </main>
   );

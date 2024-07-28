@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       "https://api-inference.huggingface.co/models/SamLowe/roberta-base-go_emotions",
       {
         headers: {
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${process.env.HF_API_TOKEN}`,
         },
         method: "POST",
         body: JSON.stringify({ inputs: text }),
