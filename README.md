@@ -1,3 +1,5 @@
+<img alt="WordWorks-API-Banner-Logo-Square" src="https://github.com/user-attachments/assets/32e3f3ed-f6bf-47b3-937a-397ce4a0d101" for="cover" width=320 />
+
 ## Docs: https://documenter.getpostman.com/view/36348829/2sA3kSoNjY
 
 ---
