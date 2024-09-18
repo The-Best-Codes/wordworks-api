@@ -1,6 +1,6 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "bestcodes_wordworks_api",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,7 +13,7 @@
     "fs": "^0.0.1-security",
     "huggingface": "^1.4.0",
     "natural": "^7.0.6",
-    "next": "14.2.3",
+    "next": "^14.2.12",
     "node-fetch": "^3.3.2",
     "react": "^18",
     "react-dom": "^18",
