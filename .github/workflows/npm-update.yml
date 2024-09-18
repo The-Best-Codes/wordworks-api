@@ -23,7 +23,7 @@ jobs:
 
       - name: Update dependencies
         run: |
-          npm update
+          npm update && npm update --save-dev && npm update --save
         continue-on-error: true
 
       - name: Check for changes
