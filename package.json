@@ -13,7 +13,7 @@
     "fs": "^0.0.1-security",
     "huggingface": "^1.4.0",
     "natural": "^7.1.0",
-    "next": "^14.2.13",
+    "next": "^14.2.14",
     "node-fetch": "^3.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.16.10",
-    "@types/react": "^18.3.10",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.3",
