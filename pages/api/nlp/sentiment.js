@@ -1,10 +1,7 @@
-// pages/api/nlp/sentiment.js
-
 import natural from "natural";
 const SentimentAnalyzer = natural.SentimentAnalyzer;
 const stemmer = natural.PorterStemmer;
 const analyzer = new SentimentAnalyzer("English", stemmer, "afinn");
-
 
 export default async function handler(req, res) {
   // Set CORS headers

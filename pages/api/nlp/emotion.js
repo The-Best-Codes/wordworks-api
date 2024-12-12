@@ -1,7 +1,4 @@
-// pages/api/nlp/emotion.js
-
 import fetch from "node-fetch";
-
 
 export default async function handler(req, res) {
   try {
@@ -15,7 +12,7 @@ export default async function handler(req, res) {
         },
         method: "POST",
         body: JSON.stringify({ inputs: text }),
-      }
+      },
     );
 
     if (!response.ok) {

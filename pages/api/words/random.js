@@ -1,7 +1,4 @@
-// pages/api/words/random.js
-
 import wordArray from "./wordList.json";
-
 
 export default async function handler(req, res) {
   // Set CORS headers

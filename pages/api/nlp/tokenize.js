@@ -1,8 +1,5 @@
-// pages/api/nlp/tokenize.js
-
 import natural from "natural";
 const tokenizer = new natural.WordTokenizer();
-
 
 export default async function handler(req, res) {
   // Set CORS headers

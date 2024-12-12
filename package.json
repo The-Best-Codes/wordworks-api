@@ -1,20 +1,19 @@
 {
   "name": "bestcodes_wordworks_api",
-  "version": "0.2.1",
+  "version": "1.0.2",
   "packageManager": "bun@1.1.38",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "generate-docs": "jsdoc -c jsdoc.json"
+    "lint": "next lint"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
     "huggingface": "^1.4.0",
     "natural": "^8.0.1",
-    "next": "^15.0.4",
+    "next": "^15.1.0",
     "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -27,11 +26,11 @@
     "wink-pos-tagger": "^2.2.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.2",
     "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
     "eslint": "^9.16.0",
-    "eslint-config-next": "15.0.4",
+    "eslint-config-next": "15.1.0",
     "jsdoc": "^4.0.4",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",

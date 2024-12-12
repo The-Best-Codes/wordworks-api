@@ -1,8 +1,5 @@
-// pages/api/nlp/parts-of-speech.js
-
 import posTagger from "wink-pos-tagger";
 var tagger = posTagger();
-
 
 export default async function handler(req, res) {
   // Set CORS headers
