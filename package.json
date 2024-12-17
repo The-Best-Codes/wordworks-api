@@ -1,6 +1,6 @@
 {
   "name": "bestcodes_wordworks_api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "packageManager": "bun@1.1.38",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "fs": "^0.0.1-security",
     "huggingface": "^1.4.0",
     "natural": "^8.0.1",
-    "next": "^15.1.0",
+    "next": "^15.1.1",
     "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -29,11 +29,15 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
-    "eslint": "^9.16.0",
-    "eslint-config-next": "15.1.0",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.1.1",
     "jsdoc": "^4.0.4",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
-  }
+  },
+  "trustedDependencies": [
+    "@tree-sitter-grammars/tree-sitter-yaml",
+    "core-js-pure"
+  ]
 }
