@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gradient-to-b from-blue-200 to-white dark:from-blue-900 dark:to-gray-900">
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-linear-to-b from-blue-200 to-white dark:from-blue-900 dark:to-gray-900">
       <div className="max-w-3xl text-center">
         <h1 className="text-5xl font-bold mb-6 text-blue-800 dark:text-white">
           WordWorks API

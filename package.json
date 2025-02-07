@@ -1,7 +1,7 @@
 {
   "name": "bestcodes_wordworks_api",
-  "version": "1.0.3",
-  "packageManager": "bun@1.1.38",
+  "version": "1.0.4",
+  "packageManager": "bun@1.2.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -26,6 +26,7 @@
     "wink-pos-tagger": "^2.2.2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
@@ -33,7 +34,7 @@
     "eslint-config-next": "15.1.1",
     "jsdoc": "^4.0.4",
     "postcss": "^8.5.1",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3"
   },
   "trustedDependencies": [
