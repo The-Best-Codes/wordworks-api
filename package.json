@@ -1,6 +1,6 @@
 {
   "name": "bestcodes_wordworks_api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "packageManager": "bun@1.2.2",
   "private": true,
   "scripts": {
