@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",
+    "fs": "^0.0.2",
     "huggingface": "^1.4.0",
     "natural": "^8.0.1",
     "next": "^15.1.6",
