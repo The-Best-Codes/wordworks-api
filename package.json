@@ -30,7 +30,7 @@
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "eslint-config-next": "16.1.1",
     "jsdoc": "^4.0.5",
     "postcss": "^8.5.6",
